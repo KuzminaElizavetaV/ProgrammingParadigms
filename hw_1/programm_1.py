@@ -15,11 +15,11 @@ def sort_list_imperative(num_list: []) -> []:
     left = [x for x in num_list if x < pivot]
     middle = [x for x in num_list if x == pivot]
     right = [x for x in num_list if x > pivot]
-    return sort_list_imperative(left) + middle + sort_list_imperative(right)
+    return sort_list_imperative(right) + middle + sort_list_imperative(left)
 
 
 def sort_list_declarative(num_list: []) -> []:
-    return sorted(num_list)
+    return sorted(num_list, reverse=True)
 
 
 if __name__ == '__main__':
