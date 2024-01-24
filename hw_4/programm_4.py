@@ -8,7 +8,7 @@
 from statistics import correlation
 
 
-def pearson_correlation(num_list_1: [], num_list_2: []) -> float:
+def pearson_correlation(num_list_1: [int], num_list_2: [int]) -> float:
     return round(correlation(num_list_1, num_list_2), 2)
 
 
