@@ -22,6 +22,7 @@ class Board:
         return False
 
     def display(self):
+        print('──╂───╂──')
         for row in self.board:
             print(' ┃ '.join(row))
             print('──╂───╂──')
