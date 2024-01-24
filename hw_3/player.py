@@ -12,11 +12,11 @@ class Player:
 
 class HumanPlayer(Player):
     def make_move(self, board):
-        available_moves = [(row, col) for row in range(3) for col in range(3) if board.board[row][col] == ' ']
+        available_moves = [(row + 1, col + 1) for row in range(3) for col in range(3) if board.board[row][col] == ' ']
         print(f"Доступно для хода: {available_moves} ")
-        row = int(input("Введите номер строки от 0 до 2: "))
-        col = int(input("Введите номер столбца от 0 до 2: "))
-        return row, col
+        row = int(input("Введите номер строки от 1 до 3: "))
+        col = int(input("Введите номер столбца от 1 до 3: "))
+        return row - 1, col - 1
 
 
 class ComputerPlayer(Player):

@@ -22,10 +22,14 @@ class Board:
         return False
 
     def display(self):
-        print('──╂───╂──')
+        i = 1
+        print('\t1 ┃ 2 ┃ 3 ')
+        print('\t──╂───╂──')
         for row in self.board:
+            print(f'{i}', end='   ')
             print(' ┃ '.join(row))
-            print('──╂───╂──')
+            print('\t──╂───╂──')
+            i = i + 1
 
     def make_move(self, player, row, col):
         if self.board[row][col] == ' ':
