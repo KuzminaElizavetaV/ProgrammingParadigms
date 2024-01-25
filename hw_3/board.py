@@ -28,12 +28,12 @@ class Board:
 
     def display(self):
         i = 1
-        print(Fore.YELLOW + '\n\t1   2   3 ')
-        print(Fore.GREEN + '\t──╂───╂──')
+        print(Fore.YELLOW + '\n\t\t1   2   3 ')
+        print(Fore.GREEN + '\t\t──╂───╂──')
         for row in self.board:
-            print(Fore.YELLOW + f'{i}', end='   ')
+            print(Fore.YELLOW + f'\t{i}', end='   ')
             print(Fore.GREEN + ' ┃ '.join(row))
-            print(Fore.GREEN + '\t──╂───╂──')
+            print(Fore.GREEN + '\t\t──╂───╂──')
             i = i + 1
 
     def make_move(self, player, row, col):
