@@ -1,4 +1,7 @@
 from board import Board
+from colorama import init, Fore
+
+init(autoreset=True)
 
 
 class Game:
@@ -14,17 +17,17 @@ class Game:
         current_player = self.player1
 
         while True:
-            print(f"Ходит игрок {current_player.name} ({current_player.symbol})")
+            print(Fore.BLUE + f"\nХОДИТ:  {current_player.name} ({current_player.symbol})")
             move = current_player.make_move(self.board)
             moved = self.board.make_move(current_player, *move)
             self.board.display()
 
             if moved:
                 if self.board.is_winner(current_player.symbol):
-                    print(f"Игрок {current_player.name} победил!")
+                    print(Fore.LIGHTRED_EX + f"\n{current_player.name} ВЫИГРАЛ!")
                     break
                 elif self.board.is_full():
-                    print("Ничья!")
+                    print(Fore.LIGHTRED_EX + "НИЧЬЯ!")
                     break
                 else:
                     current_player = self.player2 if current_player == self.player1 else self.player1

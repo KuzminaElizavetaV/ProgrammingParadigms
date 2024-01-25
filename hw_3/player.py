@@ -1,4 +1,7 @@
 import random
+from colorama import init, Fore
+
+init(autoreset=True)
 
 
 class Player:
@@ -13,10 +16,10 @@ class Player:
 class HumanPlayer(Player):
     def make_move(self, board):
         available_moves = [(row + 1, col + 1) for row in range(3) for col in range(3) if board.board[row][col] == ' ']
-        print(f"Доступно для хода: {available_moves} ")
-        row = int(input("Введите номер строки от 1 до 3: "))
-        col = int(input("Введите номер столбца от 1 до 3: "))
-        return row - 1, col - 1
+        print(Fore.CYAN + f"ВАРИАНТЫ ХОДА: {available_moves} ")
+        row_col = input(Fore.GREEN + "\nВВЕДИТЕ НОМЕР СТРОКИ И СТОЛБЦА ЧЕРЕЗ ПРОБЕЛ: ")
+        row, col = row_col.split()
+        return int(row) - 1, int(col) - 1
 
 
 class ComputerPlayer(Player):

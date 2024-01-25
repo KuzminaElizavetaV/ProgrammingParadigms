@@ -7,6 +7,9 @@
 
 from player import HumanPlayer, ComputerPlayer
 from game import Game
+from colorama import init, Fore
+
+init(autoreset=True)
 
 
 def main():
@@ -21,4 +24,5 @@ def main():
 
 
 if __name__ == "__main__":
+    print(Fore.MAGENTA + '\n* КРЕСТИКИ-НОЛИКИ *')
     main()

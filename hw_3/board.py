@@ -1,3 +1,8 @@
+from colorama import init, Fore
+
+init(autoreset=True)
+
+
 class Board:
     def __init__(self):
         self.board = [[' ' for _ in range(3)] for _ in range(3)]
@@ -23,18 +28,18 @@ class Board:
 
     def display(self):
         i = 1
-        print('\t1 ┃ 2 ┃ 3 ')
-        print('\t──╂───╂──')
+        print(Fore.YELLOW + '\n\t1   2   3 ')
+        print(Fore.GREEN + '\t──╂───╂──')
         for row in self.board:
-            print(f'{i}', end='   ')
-            print(' ┃ '.join(row))
-            print('\t──╂───╂──')
+            print(Fore.YELLOW + f'{i}', end='   ')
+            print(Fore.GREEN + ' ┃ '.join(row))
+            print(Fore.GREEN + '\t──╂───╂──')
             i = i + 1
 
     def make_move(self, player, row, col):
-        if self.board[row][col] == ' ':
+        if row in range(3) and col in range(3) and self.board[row][col] == ' ':
             self.board[row][col] = player.symbol
             return True
         else:
-            print("Неверный ход!")
+            print(Fore.RED + "Неверный ход!")
             return False
