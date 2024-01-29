@@ -14,8 +14,8 @@ init(autoreset=True)
 
 def main():
     # Создаем игроков
-    # player1 = HumanPlayer("Игрок 1", "X")  # Вариант игры человека в консоли
-    player1 = ComputerPlayer("Компьютер 1", "X")  # Игрок - компьютер
+    player1 = HumanPlayer("Игрок 1", "X")  # Вариант игры человека в консоли
+    # player1 = ComputerPlayer("Компьютер 1", "X")  # Игрок - компьютер
     player2 = ComputerPlayer("Компьютер 2", "O")  # Игрок - компьютер
     # Создаем игру
     game = Game(player1, player2)
