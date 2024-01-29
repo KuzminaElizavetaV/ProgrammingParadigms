@@ -1,12 +1,12 @@
 """
 Бинарный поиск
-    ● Контекст
+    ● Контекст.
         Предположим, что мы хотим найти элемент в массиве (получить его индекс). Мы можем это сделать просто перебрав
         все элементы. Но что, если массив уже отсортирован? В этом случае можно использовать бинарный поиск.
         Принцип прост: сначала берём элемент находящийся посередине и сравниваем с тем, который мы хотим найти.
         Если центральный элемент больше нашего, рассматриваем массив слева от центрального, а если больше - справа и
         повторяем так до тех пор, пока не найдем наш элемент.
-    ● Ваша задача
+    ● Ваша задача.
         Написать программу на любом языке в любой парадигме для бинарного поиска. На вход подаётся целочисленный массив
         и число. На выходе - индекс элемента или -1, в случае если искомого элемента нет в массиве.
 """
@@ -19,7 +19,7 @@ def create_sorted_list(start: int, end: int, len_list: int) -> [int]:
     return num_list
 
 
-def binary_search(num_list: [int], number: int) -> int | None:
+def binary_search(num_list: [int], number: int) -> int:
     mid = len(num_list) // 2
     low = 0
     high = len(num_list) - 1
@@ -32,13 +32,13 @@ def binary_search(num_list: [int], number: int) -> int | None:
         mid = (low + high) // 2
 
     if low > high:
-        return None
+        return -1
     else:
         return mid
 
 
-def is_index_number_message(value: int | None) -> str:
-    if value is None:
+def is_index_number_message(value: int) -> str:
+    if value == -1:
         return "Искомое число не найдено в списке!"
     else:
         return f"Индекс искомого числа равен {value}"
@@ -47,5 +47,5 @@ def is_index_number_message(value: int | None) -> str:
 if __name__ == '__main__':
     number_list = create_sorted_list(1, 35, 25)
     print(number_list)
-    print(is_index_number_message(binary_search(number_list, 32)))
+    print(is_index_number_message(binary_search(number_list, 10)))
 
