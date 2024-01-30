@@ -15,8 +15,7 @@ from random import randint
 
 def create_sorted_list(start: int, end: int, len_list: int) -> [int]:
     num_list = [randint(start, end) for _ in range(len_list)]
-    num_list.sort()
-    return num_list
+    return sorted(num_list)
 
 
 def binary_search(num_list: [int], number: int) -> int:
